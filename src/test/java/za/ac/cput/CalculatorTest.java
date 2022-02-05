@@ -2,6 +2,7 @@ package za.ac.cput;
 
 import junit.framework.TestCase;
 import org.junit.*;
+import org.junit.jupiter.api.DisplayName;
 
 public class CalculatorTest extends TestCase {
     private Calculator calc;
@@ -44,5 +45,30 @@ public class CalculatorTest extends TestCase {
         //  --failed test--
         //  assertSame(51, calc.Multiplication(a,b));
         assertSame(50,calc.Multiplication(a,b));
+    }
+    //Chadrack Section
+    @Test
+    @DisplayName("Passing Test")
+    void calTestPass() {
+
+        assertEquals(2, Calculator.div(10,5));
+        assertEquals(9, Calculator.div(18,2));
+        assertEquals(6, Calculator.div(18, 3));
+    }
+    @Test
+    @DisplayName("Failing Test of two numbers divided")
+    void calTestFail(){
+
+        assertEquals(6, Calculator.div(4,3));
+        assertEquals(5, Calculator.div(6,5));
+        assertEquals(6.1, Calculator.div(4.2, 5.3));
+    }
+    @Test
+    @DisplayName("Ensure correct handling of Exception")
+    void calTestException(){
+
+        assertEquals(4, Calculator.div(3,0));
+        assertEquals(5, Calculator.div(6,5));
+        assertEquals(4.1, Calculator.div(6.2, 9));
     }
 }
