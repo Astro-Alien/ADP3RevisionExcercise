@@ -53,11 +53,8 @@ public class CalculatorTest extends TestCase {
 
     }
     //Chadrack Section
-    public void calTestPass() {
-
+    public void testDiv() {
         assertEquals(2, Calculator.div(10,5));
-        assertEquals(9, Calculator.div(18,2));
-        assertEquals(6, Calculator.div(18, 3));
     }
     
     //Farai Section
