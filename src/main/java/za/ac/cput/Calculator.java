@@ -26,4 +26,11 @@ public class Calculator
         int ans = first * last;
         return ans;
     }
+
+    public static double div(double number1, double number2){
+        if (number2 ==0){
+            throw new IllegalArgumentException("Number2 can not be 0!");
+        }
+        return number1 / number2;
+    }
 }
