@@ -3,9 +3,11 @@ package za.ac.cput;
 import junit.framework.TestCase;
 import org.junit.*;
 import org.junit.jupiter.api.DisplayName;
+import java.util.concurrent.TimeUnit;
 
 public class CalculatorTest extends TestCase {
     private Calculator calc;
+    private Calculator calc2;
     private int a, b;
 
     @BeforeClass
@@ -22,6 +24,8 @@ public class CalculatorTest extends TestCase {
     public void setUp() {
         System.out.println("Set up method fixture");
         this.calc = new Calculator();
+        this.calc2=new Calculator();
+        calc=calc2;
         this.a = 5;
         this.b = 10;
     }
@@ -40,11 +44,13 @@ public class CalculatorTest extends TestCase {
         assertSame(5, calc.Subtraction(a, b));
     }
     //Charles Section
+    @Test
     public void testMultiplication(){
         calc.Multiplication(a,b);
+        assertEquals(calc,calc2);
         //  --failed test--
         //  assertSame(51, calc.Multiplication(a,b));
-        assertSame(50,calc.Multiplication(a,b));
+
     }
     //Chadrack Section
     @Test
@@ -71,4 +77,19 @@ public class CalculatorTest extends TestCase {
         assertEquals(5, Calculator.div(6,5));
         assertEquals(4.1, Calculator.div(6.2, 9));
     }
+    //Farai Section
+    public void testAddition() {
+        calc.addition(a,b);
+        fail("this will  fail");
+    }
+
+
+    //Farai Section
+    @Test(timeout = 500)
+    public void testTimeout() throws InterruptedException
+    {
+        TimeUnit.SECONDS.sleep(1);
+    }
+
+
 }

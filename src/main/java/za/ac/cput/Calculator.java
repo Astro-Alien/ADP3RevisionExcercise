@@ -33,4 +33,8 @@ public class Calculator
         }
         return number1 / number2;
     }
+    //Farai Section
+    public int addition(int a , int b){
+        return a+b;
+    }
 }
