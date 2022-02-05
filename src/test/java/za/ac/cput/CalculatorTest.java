@@ -38,4 +38,11 @@ public class CalculatorTest extends TestCase {
 
         assertSame(5, calc.Subtraction(a, b));
     }
+    //Charles Section
+    public void testMultiplication(){
+        calc.Multiplication(a,b);
+        //  --failed test--
+        //  assertSame(51, calc.Multiplication(a,b));
+        assertSame(50,calc.Multiplication(a,b));
+    }
 }
