@@ -37,48 +37,38 @@ public class CalculatorTest extends TestCase {
     }
 
     //Joshua Section
+    //object identity test
     public void testSubtraction(){
         calc.Subtraction(a, b);
         //  --failed test--
         //  assertSame(5, calc.Subtraction(a, 90));
-
         assertSame(5, calc.Subtraction(a, b));
     }
-    //Charles Section
-    @Test
-    public void testMultiplication(){
-        calc.Multiplication(a,b);
-        assertEquals(calc,calc2);
-        //  --failed test--
-        //  assertSame(51, calc.Multiplication(a,b));
 
-    }
-    //object identity test
-    @Test
-    public void test(){
-        calc.Subtraction(a, b);
-        assertSame(calc2,calc);
-    }
-    /*Chadrack Section
+    //Chadrack Section
+    //object equality test
     public void testDiv() {
-        assertEquals(2, Calculator.div(10,5));
-    }*/
-    
+        assertEquals(2.0, calc.div(10,5));
+    }
+
     //Farai Section
+    //object failing test
     public void testAddition() {
         calc.addition(a,b);
         fail("this will  fail");
     }
 
-
     //Farai Section
+    //object Timeout test
     @Test(timeout = 500)
     public void testTimeout() throws InterruptedException
     {
         TimeUnit.SECONDS.sleep(1);
     }
-
-    @Disabled("l do not want to run this line")
+    
+    //Charles Section
+    //Object Disabling test
+    @Ignore("I do not want to run this line")
     @Test
     public void testDisable() {
         System.out.println("Disabled the method");
