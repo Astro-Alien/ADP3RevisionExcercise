@@ -2,6 +2,7 @@ package za.ac.cput;
 
 import junit.framework.TestCase;
 import org.junit.*;
+import org.junit.jupiter.api.Disabled;
 import org.junit.jupiter.api.DisplayName;
 import java.util.concurrent.TimeUnit;
 
@@ -52,10 +53,16 @@ public class CalculatorTest extends TestCase {
         //  assertSame(51, calc.Multiplication(a,b));
 
     }
-    //Chadrack Section
+    //object identity test
+    @Test
+    public void test(){
+        calc.Subtraction(a, b);
+        assertSame(calc2,calc);
+    }
+    /*Chadrack Section
     public void testDiv() {
         assertEquals(2, Calculator.div(10,5));
-    }
+    }*/
     
     //Farai Section
     public void testAddition() {
@@ -71,5 +78,9 @@ public class CalculatorTest extends TestCase {
         TimeUnit.SECONDS.sleep(1);
     }
 
-
+    @Disabled("l do not want to run this line")
+    @Test
+    public void testDisable() {
+        System.out.println("Disabled the method");
+    }
 }
