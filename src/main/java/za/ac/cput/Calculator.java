@@ -8,7 +8,7 @@ public class Calculator
 {
     public static void main( String[] args )
     {
-        System.out.println( "Hello World!" );
+        System.out.println("Hello World!" );
 
     }
 
@@ -27,9 +27,10 @@ public class Calculator
         return ans;
     }
 
-    /*public double div(double number1, double number2){
+    public double div(double number1, double number2){
+
         return number1 / number2;
-    }*/
+    }
     //Farai Section
     public int addition(int a , int b){
         return a+b;
